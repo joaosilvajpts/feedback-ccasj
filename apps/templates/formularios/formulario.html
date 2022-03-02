@@ -1,0 +1,166 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Projeto CCA-SJ</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href={%static "icons/favicon.ico"/ %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "bootstrap/css/bootstrap.min.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "font-awesome-4.7.0/css/font-awesome.min.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "animate/animate.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "css-hamburgers/hamburgers.min.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "animsition/css/animsition.min.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "select2/select2.min.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "daterangepicker/daterangepicker.css" %}>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href={%static "css/util.css" %}>
+	<link rel="stylesheet" type="text/css" href={%static "css/main.css" %}>
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action"" method="post">
+                {%csrf_token%}
+				<span class="contact100-form-title">
+					Projetos CCA-SJ
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Nome é necessário">
+					<span class="label-input100">Nome de Guerra</span>
+					<input class="input100" type="text" name="name" placeholder="Insira seu nome de guerra">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "É necessário um email válido: ex@abc.xyz">
+					<span class="label-input100">Email</span>
+					<input class="input100" type="text" name="Email" placeholder="Insira seu endereço de email">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Insira um contato válido">
+					<span class="label-input100">Contato</span>
+					<input class="input100" type="text" name="Contato" placeholder="Insira seu contato" maxlength="11">
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Patente</span>
+					<div>
+						<select class="selection-2" name="service">
+							<option>Selecione sua patente:</option>
+							<option>Soldado de 2ª Classe</option>
+							<option>Soldado de 1ª Classe</option>
+							<option>Cabo</option>
+							<option>3º Sargento</option>
+							<option>2º Sargento</option>
+							<option>1º Sargento</option>
+							<option>Sub-Oficial</option>
+							<option>Aspirante a Oficial</option>
+							<option>2º Tenente</option>
+							<option>1º Tenente</option>
+							<option>Capitão</option>
+							<option>Major</option>
+							<option>Tenente-Coronel</option>
+							<option>Coronel</option>
+							<option>Brigadeiro</option>
+							<option>Major-Brigadeiro</option>
+							<option>Tenente-Brigadeiro</option>
+							<option>Civil</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100">Projeto</span>
+					<div>
+						<select class="selection-2" name="projeto">
+							<option>Selecione o projeto:</option>
+							<option>FABDOC</option>
+							<option>SPCOA</option>
+							<option>SAGEM</option>
+							<option>C2/ CENTRAL</option>
+							<option>C2/ DEA2</option>
+							<option>C2/ HERCULES 2</option>
+							<option>IFFM4BR</option>
+							<option>SIMULADOR T27</option>
+							<option>A29 RV</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Feedback é necessário">
+					<span class="label-input100">Feedback</span>
+					<textarea class="input100" name="message" placeholder="Dê seu feedback aqui..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" type="submit">
+							<span>
+								Enviar feedback
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src={%static "jquery/jquery-3.2.1.min.js" %}></script>
+<!--===============================================================================================-->
+	<script src={%static "animsition/js/animsition.min.js" %}></script>
+<!--===============================================================================================-->
+	<script src={%static "bootstrap/js/popper.js" %}></script>
+	<script src={%static "bootstrap/js/bootstrap.min.js" %}></script>
+<!--===============================================================================================-->
+	<script src={%static "select2/select2.min.js" %}></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src={%static "daterangepicker/moment.min.js" %}></script>
+	<script src={%static "daterangepicker/daterangepicker.js" %}></script>
+<!--===============================================================================================-->
+	<script src={%static "countdowntime/countdowntime.js" %}></script>
+<!--===============================================================================================-->
+	<script src={%static "js/main.js" %}></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
